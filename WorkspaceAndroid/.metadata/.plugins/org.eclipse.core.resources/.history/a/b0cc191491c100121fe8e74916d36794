@@ -1,0 +1,85 @@
+package br.android.mobpdv.view;
+
+import android.app.Activity;
+import android.graphics.Typeface;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseExpandableListAdapter;
+import android.widget.TextView;
+
+public class CategoriaAdapter extends BaseExpandableListAdapter {
+
+	private Activity activity;
+	
+	//Simulando Dados de um BD
+	public String[] categorias = new String[] {"Bebida", "Salgado"};
+	public String[][] produtos = new String[][] {{"Coca Cola", "Fanta Laranja"}, {"Coxinha", "Pastel"}};
+	
+	
+	public CategoriaAdapter(Activity activity){
+		this.activity = activity;
+	}
+	
+	@Override
+	public Object getChild(int arg0, int arg1) {
+		return produtos[arg0][arg1];
+	}
+
+	@Override
+	public long getChildId(int arg0, int arg1) {
+		return arg1;
+	}
+
+	@Override
+	public View getChildView(int arg0, int arg1, boolean arg2, View arg3,
+			ViewGroup arg4) {
+		TextView txt = new TextView(this.activity);
+		txt.setText(produtos[arg0][arg1]);
+		txt.setPadding(30, 0, 0, 0);
+		txt.setTextSize(25);
+		return txt;
+	}
+
+	@Override
+	public int getChildrenCount(int arg0) {
+		return produtos[arg0].length;
+	}
+
+	@Override
+	public Object getGroup(int arg0) {
+		return categorias[arg0];
+	}
+
+	@Override
+	public int getGroupCount() {
+		return categorias.length;
+	}
+
+	@Override
+	public long getGroupId(int arg0) {
+		return arg0;
+	}
+
+	@Override
+	public View getGroupView(int arg0, boolean arg1, View arg2, ViewGroup arg3) {
+		TextView txt = new TextView(this.activity);
+		txt.setText(categorias[arg0]);
+		txt.setPadding(50, 0, 0, 0);
+		txt.setTextSize(30);
+		txt.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+		return txt;
+	}
+
+	@Override
+	public boolean hasStableIds() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isChildSelectable(int arg0, int arg1) {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+}
