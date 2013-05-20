@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;LoginActivity.java&apos; to &apos;MobPDVProjet/src/br.android.mobpdv.view&apos;&#x0A;- Original project: &apos;MobPDVProjet&apos;&#x0A;- Destination element: &apos;MobPDVProjet/src/br.android.mobpdv.view&apos;&#x0A;- Original element: &apos;br.android.mobpdv.LoginActivity.java&apos;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;br.android.mobpdv.view" element1="/src&lt;br.android.mobpdv{LoginActivity.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1369065523372" units="1" version="1.0"/>
+</session>

@@ -12,7 +12,6 @@
 <fullyQualifiedTypeName name="br.android.mobpdv.MainActivity"/>
 <fullyQualifiedTypeName name="br.android.mobpdv.CardapioActivity"/>
 <fullyQualifiedTypeName name="android.content.Intent"/>
-<fullyQualifiedTypeName name="android.util.Log"/>
 <fullyQualifiedTypeName name="android.os.Bundle"/>
 <fullyQualifiedTypeName name="android.app.AlertDialog"/>
 <fullyQualifiedTypeName name="android.content.DialogInterface"/>
@@ -30,4 +29,7 @@
 <fullyQualifiedTypeName name="android.app.ListActivity"/>
 <fullyQualifiedTypeName name="br.android.mobpdv.view.CicloVidaActivity"/>
 <fullyQualifiedTypeName name="br.android.mobpdv.view.CardapioActivity"/>
+<fullyQualifiedTypeName name="android.util.Log"/>
+<fullyQualifiedTypeName name="br.android.mobpdv.view.MainActivity"/>
+<fullyQualifiedTypeName name="br.android.mobpdv.view.LoginActivity"/>
 </qualifiedTypeNameHistroy>
