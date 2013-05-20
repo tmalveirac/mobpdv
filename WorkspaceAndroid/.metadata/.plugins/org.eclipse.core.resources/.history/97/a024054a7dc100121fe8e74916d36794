@@ -18,6 +18,14 @@ public class CardapioActivity extends CicloVidaActivity {
 	
 	}
 	
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+		super.onListItemClick(l, v, position, id);
+		
+		//Object o = this.getListAdapter().getItem(position);
+		//String item = o.toString();
+		
+		//Toast.makeText(this, "Selecionado : "+ item, Toast.LENGTH_SHORT).show();
+	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
