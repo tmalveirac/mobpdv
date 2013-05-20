@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.security.PublicKey"/>
+<fullyQualifiedTypeName name="android.net.sip.SipSession.Listener"/>
+<fullyQualifiedTypeName name="android.content.DialogInterface.OnClickListener"/>
+<fullyQualifiedTypeName name="android.widget.Button"/>
+<fullyQualifiedTypeName name="br.android.mobpdv.R.id"/>
+<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
+<fullyQualifiedTypeName name="br.android.mobpdv.CicloVida"/>
+<fullyQualifiedTypeName name="br.android.mobpdv.VendaActivity"/>
+<fullyQualifiedTypeName name="br.android.mobpdv.CicloVidaActivity"/>
+<fullyQualifiedTypeName name="br.android.mobpdv.MainActivity"/>
+<fullyQualifiedTypeName name="br.android.mobpdv.CardapioActivity"/>
+<fullyQualifiedTypeName name="android.content.Intent"/>
+<fullyQualifiedTypeName name="android.util.Log"/>
+<fullyQualifiedTypeName name="android.os.Bundle"/>
+<fullyQualifiedTypeName name="android.app.AlertDialog"/>
+<fullyQualifiedTypeName name="android.content.DialogInterface"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="br.android.mobpdv.model.Produto"/>
+<fullyQualifiedTypeName name="br.android.mobpdv.model.TipoCardapio"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="android.widget.ArrayAdapter"/>
+<fullyQualifiedTypeName name="android.R"/>
+<fullyQualifiedTypeName name="android.R.layout"/>
+<fullyQualifiedTypeName name="android.widget.ListView"/>
+<fullyQualifiedTypeName name="android.view.View"/>
+<fullyQualifiedTypeName name="java.lang.Object"/>
+<fullyQualifiedTypeName name="android.widget.Toast"/>
+<fullyQualifiedTypeName name="android.app.ListActivity"/>
+<fullyQualifiedTypeName name="br.android.mobpdv.view.CicloVidaActivity"/>
+<fullyQualifiedTypeName name="br.android.mobpdv.view.CardapioActivity"/>
+</qualifiedTypeNameHistroy>
