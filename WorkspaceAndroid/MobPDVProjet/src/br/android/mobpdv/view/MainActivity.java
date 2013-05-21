@@ -50,7 +50,7 @@ public class MainActivity extends CicloVidaActivity {
 				Log.d(CATEGORIA, "Ver Cardápio");
 				
 				Intent it = new Intent(MainActivity.this, CardapioActivity.class);
-				it.putExtra("msg", "Parãmetro enviado!");				
+				it.putExtra(MENSAGEM, VER_CARDAPIO);				
 				startActivity(it);
 				
 			}
@@ -93,7 +93,7 @@ public class MainActivity extends CicloVidaActivity {
 
 	    builder.setNegativeButton("Confirmar", new DialogInterface.OnClickListener() {
 	        public void onClick(DialogInterface arg0, int arg1) {
-	            Toast.makeText(MainActivity.this, "Caixa aberto com sucesso!", Toast.LENGTH_SHORT).show();
+	            Toast.makeText(MainActivity.this, CAIXA_ABERTO, Toast.LENGTH_SHORT).show();
 	        }
 	    });
 
@@ -116,7 +116,7 @@ public class MainActivity extends CicloVidaActivity {
 
 	    builder.setNegativeButton("Confirmar", new DialogInterface.OnClickListener() {
 	        public void onClick(DialogInterface arg0, int arg1) {
-	            Toast.makeText(MainActivity.this, "Caixa fechado com sucesso!", Toast.LENGTH_SHORT).show();
+	            Toast.makeText(MainActivity.this, CAIXA_FECHADO, Toast.LENGTH_SHORT).show();
 	        }
 	    });
 

@@ -4,6 +4,8 @@ import br.android.mobpdv.R;
 import android.os.Bundle;
 import android.app.ExpandableListActivity;
 import android.app.ListActivity;
+import android.content.Intent;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -56,7 +58,33 @@ public class CardapioActivity extends CicloVidaActivity {
 	
 	public boolean list_onChildClick(ExpandableListView parent, View v,
 			int groupPosition, int childPosition, long id) {
-		Toast.makeText(CardapioActivity.this, adapter.getChild(groupPosition, childPosition).toString(), Toast.LENGTH_SHORT).show();
+
+		Intent rcvIntent = getIntent();
+		String msg = null;
+		
+		if (rcvIntent != null){
+			msg = rcvIntent.getStringExtra(MENSAGEM);
+			if (msg != null){
+				Log.i(CATEGORIA, "Mensagem recebida: " + msg);
+			}
+		}
+		
+		if (msg.equals(VER_CARDAPIO)){
+			//Chama a Activity Pedido sem Result! Veio de Main
+			Intent it = new Intent(CardapioActivity.this, PedidoActivity.class);
+			it.putExtra(MENSAGEM, adapter.getChild(groupPosition, childPosition).toString());	
+			startActivity(it);
+			finish();
+		}
+		else{
+			//Retornar para a Activity Pedido com result! Veio de Pedido
+			Intent it = new Intent();
+			it.putExtra(MENSAGEM, adapter.getChild(groupPosition, childPosition).toString());	
+			setResult(RESULT_OK, it);
+			finish();
+		}
+			
+		
 		return false;
 	}
 	
