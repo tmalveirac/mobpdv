@@ -14,7 +14,7 @@ public class CicloVidaActivity extends Activity {
 	protected static final String BUSCAR_PRODUTO = "produto";
 	protected static final String CAIXA_ABERTO = "Caixa Aberto com Sucesso";
 	protected static final String CAIXA_FECHADO = "Caixa Fechado com Sucesso";
-	
+	protected static final String PEDIDO_CANCELADO = "Pedido Cancelado";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

@@ -13,5 +13,17 @@
     <string name="title_activity_pedido">Pedido</string>
     <string name="title_activity_cardapio">Cardapio</string>
     <string name="txtMain">MobPDV</string>
+    <string name="btnCancelarPedido">Cancelar</string>
+    <string name="btnRealizarPedido">Realizar Pedido</string>
+    <string name="title_activity_venda">VendaActivity</string>
+    <string name="txtTotalPedido">Total a pagar: R$ XX</string>
+    <string name="btnCancelarVenda">Cancelar</string>
+    <string name="btnFinalizarVenda">Finalizar Venda</string>
+    <string name="title_activity_pagamento">PagamentoActivity</string>
+    <string name="btnConfirmarPg">Confirmar</string>
+    <string name="btnCancelarPg">Cancelar</string>
+    <string name="title_activity_venda_final">VendaFinalActivity</string>
+    <string name="txtTotalPago">Total Pago: R$ XX</string>
+    <string name="btnGerarComp">Gerar Comprovante</string>
 
 </resources>
