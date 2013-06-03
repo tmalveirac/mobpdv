@@ -1,6 +1,5 @@
 package br.android.mobpdv.view;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import br.android.mobpdv.R;
@@ -28,7 +27,7 @@ public class PedidoActivity extends CicloVidaActivity {
 	public static final int BUSCAR_PRODUTO = 1;
 	
 	private AlertDialog alerta;
-	private List<Produto> listaProduto = new ArrayList<Produto>();
+	private List<Produto> listaProduto;
 	
 	
 	@Override
@@ -43,7 +42,7 @@ public class PedidoActivity extends CicloVidaActivity {
 			//String msg = it.getStringExtra(MENSAGEM);
 			Produto p = (Produto) it.getParcelableExtra(MENSAGEM);	
 			
-			listaProduto.add(p);
+			//listaProduto.add(p);
 			
 			if (p != null){
 				//Log.i(CATEGORIA, "Mensagem recebida onCreate: " + msg.toString());
@@ -87,10 +86,6 @@ public class PedidoActivity extends CicloVidaActivity {
 				//LinearLayout linearTotal = findViewById(R.id.pedido_total);
 //				linear.addView(child)
 			
-				TextView txtValorTotal = (TextView) findViewById(R.id.txtTotal);
-				txtValorTotal.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-				txtValorTotal.setText("TOTAL R$ " + somaTotal(listaProduto));
-				
 				Log.i(CATEGORIA, " ONCREATE");
 				
 			}
@@ -164,7 +159,7 @@ public class PedidoActivity extends CicloVidaActivity {
 		*/
 
 		Produto p = (Produto) data.getParcelableExtra(MENSAGEM);	
-		listaProduto.add(p);
+		//listaProduto.add(p);
 		
 		if (p != null){
 			
@@ -205,10 +200,6 @@ public class PedidoActivity extends CicloVidaActivity {
 			linear.addView(linearValor);
 			
 			linearDados.addView(linear);
-			
-			TextView txtValorTotal = (TextView) findViewById(R.id.txtTotal);
-			txtValorTotal.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-			txtValorTotal.setText("TOTAL R$ " + somaTotal(listaProduto));
 
 			
 			Log.i(CATEGORIA, " ONRESULT");

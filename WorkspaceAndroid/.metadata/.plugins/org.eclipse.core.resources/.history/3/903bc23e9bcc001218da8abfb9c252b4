@@ -84,13 +84,9 @@ public class PedidoActivity extends CicloVidaActivity {
 				
 				linearDados.addView(linear);
 				
-				//LinearLayout linearTotal = findViewById(R.id.pedido_total);
+				LinearLayout linearTotal = findViewById(R.id.pedido_total);
 //				linear.addView(child)
 			
-				TextView txtValorTotal = (TextView) findViewById(R.id.txtTotal);
-				txtValorTotal.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-				txtValorTotal.setText("TOTAL R$ " + somaTotal(listaProduto));
-				
 				Log.i(CATEGORIA, " ONCREATE");
 				
 			}
@@ -205,10 +201,6 @@ public class PedidoActivity extends CicloVidaActivity {
 			linear.addView(linearValor);
 			
 			linearDados.addView(linear);
-			
-			TextView txtValorTotal = (TextView) findViewById(R.id.txtTotal);
-			txtValorTotal.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
-			txtValorTotal.setText("TOTAL R$ " + somaTotal(listaProduto));
 
 			
 			Log.i(CATEGORIA, " ONRESULT");
