@@ -1,5 +1,9 @@
 package br.android.mobpdv.view;
 
+import java.util.List;
+
+import br.android.mobpdv.model.CategoriaProduto;
+import br.android.mobpdv.model.Produto;
 import android.R;
 import android.app.Activity;
 import android.graphics.Typeface;
@@ -14,9 +18,23 @@ public class CategoriaAdapter extends BaseExpandableListAdapter {
 
 	private Activity activity;
 	
+	
+	Produto p1 = new Produto(1, "Coca Cola", 2.0, CategoriaProduto.BEBIDA);
+	Produto p2 = new Produto(1, "Fanta Laranja", 2.0, CategoriaProduto.BEBIDA);
+	Produto p3 = new Produto(1, "Coxinha", 6.0, CategoriaProduto.SALGADO);
+	Produto p4 = new Produto(1, "Pastel", 5.0, CategoriaProduto.SALGADO);
+	
+	
+	
+	
 	//Simulando Dados de um BD
-	public String[] categorias = new String[] {"Bebida", "Salgado"};
-	public String[][] produtos = new String[][] {{"Coca Cola", "Fanta Laranja"}, {"Coxinha", "Pastel"}};
+	//public String[] categorias = new String[] {"Bebida", "Salgado"};
+	//public String[][] produtos = new String[][] {{"Coca Cola", "Fanta Laranja"}, {"Coxinha", "Pastel"}};
+	
+	public String[] categorias = new String[] {CategoriaProduto.BEBIDA.toString(), CategoriaProduto.SALGADO.toString()};
+	
+	public Produto[][] produtos = new Produto[][] {{p1,p2},{p3,p4}};
+	
 	
 	
 	public CategoriaAdapter(Activity activity){
@@ -37,7 +55,7 @@ public class CategoriaAdapter extends BaseExpandableListAdapter {
 	public View getChildView(int arg0, int arg1, boolean arg2, View arg3,
 			ViewGroup arg4) {
 		TextView txt = new TextView(this.activity);
-		txt.setText(produtos[arg0][arg1]);
+		txt.setText(produtos[arg0][arg1].getDescricao());
 		txt.setPadding(30, 0, 0, 0);
 		txt.setTextSize(25);
 		

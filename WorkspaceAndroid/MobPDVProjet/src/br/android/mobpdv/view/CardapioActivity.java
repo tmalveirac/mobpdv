@@ -1,6 +1,7 @@
 package br.android.mobpdv.view;
 
 import br.android.mobpdv.R;
+import br.android.mobpdv.model.Produto;
 import android.os.Bundle;
 import android.app.ExpandableListActivity;
 import android.app.ListActivity;
@@ -71,15 +72,28 @@ public class CardapioActivity extends CicloVidaActivity {
 		
 		if (msg.equals(VER_CARDAPIO)){
 			//Chama a Activity Pedido sem Result! Veio de Main
+			
 			Intent it = new Intent(CardapioActivity.this, PedidoActivity.class);
-			it.putExtra(MENSAGEM, adapter.getChild(groupPosition, childPosition).toString());	
+			//it.putExtra(MENSAGEM, adapter.getChild(groupPosition, childPosition).toString());
+			
+			
+			it.putExtra(MENSAGEM, (Produto) adapter.getChild(groupPosition, childPosition));
+			
 			startActivity(it);
 			finish();
 		}
 		else{
 			//Retornar para a Activity Pedido com result! Veio de Pedido
 			Intent it = new Intent();
-			it.putExtra(MENSAGEM, adapter.getChild(groupPosition, childPosition).toString());	
+			//it.putExtra(MENSAGEM, adapter.getChild(groupPosition, childPosition).toString());	
+			
+			
+			//Log.i(CATEGORIA, "PRE-ESC=" + it.getExtras().get(MENSAGEM));
+			
+			it.putExtra(MENSAGEM, (Produto) adapter.getChild(groupPosition, childPosition));
+			
+			Log.i(CATEGORIA, "ESCOLHIDO:" + ((Produto) adapter.getChild(groupPosition, childPosition)).getDescricao());
+	                
 			setResult(RESULT_OK, it);
 			finish();
 		}

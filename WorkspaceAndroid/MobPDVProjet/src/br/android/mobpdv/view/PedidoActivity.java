@@ -1,6 +1,7 @@
 package br.android.mobpdv.view;
 
 import br.android.mobpdv.R;
+import br.android.mobpdv.model.Produto;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -31,13 +32,18 @@ public class PedidoActivity extends CicloVidaActivity {
 		//Primeira Vez em que Esta Activity é chamada, recebe o primeiro parâmetro
 		Intent it = getIntent();
 		if (it != null){
-			String msg = it.getStringExtra(MENSAGEM);
-			if (msg != null){
-				Log.i(CATEGORIA, "Mensagem recebida onCreate: " + msg);
+			//String msg = it.getStringExtra(MENSAGEM);
+			Produto p = (Produto) it.getParcelableExtra(MENSAGEM);	
+			if (p != null){
+				//Log.i(CATEGORIA, "Mensagem recebida onCreate: " + msg.toString());
 				
 				//Adicionar produto no layout!
+				
+				Log.i(CATEGORIA, "Mensagem recebida onCreate: " + p.getDescricao());
+				
 				TextView txt = new TextView(this);
-				txt.setText(msg);
+				//txt.setText(msg);
+				txt.setText(p.getDescricao());
 				txt.setPadding(0, 10, 0, 0);
 				txt.setTextSize(30);
 				//txt.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
@@ -46,7 +52,11 @@ public class PedidoActivity extends CicloVidaActivity {
 				
 				linearDados.addView(txt);
 			
+				Log.i(CATEGORIA, " ONCREATE");
 				
+			}
+			else {
+				Log.i(CATEGORIA, "Pedido Mensagem recebida onCreate: NULO ");
 			}
 		}
 		
@@ -108,20 +118,36 @@ public class PedidoActivity extends CicloVidaActivity {
 	
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		String msg = data.getStringExtra(MENSAGEM);
+		/*String msg = data.getStringExtra(MENSAGEM);
 		if (msg != null){
-			Log.i(CATEGORIA, "Mesagem recebida onResult = " + msg);
+			Log.i(CATEGORIA, "Mesagem recebida onResult = " + msg.toString());
 		}
+		*/
+
+		Produto p = (Produto) data.getParcelableExtra(MENSAGEM);	
 		
-		TextView txt = new TextView(this);
-		txt.setText(msg);
-		txt.setPadding(0, 10, 0, 0);
-		txt.setTextSize(30);
-		//txt.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
 		
-		LinearLayout linear = (LinearLayout) findViewById(R.id.pedido_dados);
-		
-		linear.addView(txt);
+		if (p != null){
+			
+			
+			Log.i(CATEGORIA, "Mensagem recebida onResult: " + p.getDescricao());
+			
+			TextView txt = new TextView(this);
+			//txt.setText(msg);
+			txt.setText(p.getDescricao());
+			txt.setPadding(0, 10, 0, 0);
+			txt.setTextSize(30);
+			//txt.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+			
+			LinearLayout linear = (LinearLayout) findViewById(R.id.pedido_dados);
+			
+			linear.addView(txt);
+			
+			Log.i(CATEGORIA, " ONRESULT");
+		}
+		else{
+			Log.i(CATEGORIA, "Pedido Mensagem recebida OnResult: NULO ");
+		}
 	
 	}
 	
