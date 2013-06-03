@@ -1,5 +1,7 @@
 package br.android.mobpdv.view;
 
+import java.util.List;
+
 import br.android.mobpdv.R;
 import br.android.mobpdv.model.Produto;
 
@@ -9,10 +11,14 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.View;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +27,7 @@ public class PedidoActivity extends CicloVidaActivity {
 	public static final int BUSCAR_PRODUTO = 1;
 	
 	private AlertDialog alerta;
+	private List<Produto> listaProduto;
 	
 	
 	@Override
@@ -34,6 +41,9 @@ public class PedidoActivity extends CicloVidaActivity {
 		if (it != null){
 			//String msg = it.getStringExtra(MENSAGEM);
 			Produto p = (Produto) it.getParcelableExtra(MENSAGEM);	
+			
+			//listaProduto.add(p);
+			
 			if (p != null){
 				//Log.i(CATEGORIA, "Mensagem recebida onCreate: " + msg.toString());
 				
@@ -41,16 +51,40 @@ public class PedidoActivity extends CicloVidaActivity {
 				
 				Log.i(CATEGORIA, "Mensagem recebida onCreate: " + p.getDescricao());
 				
-				TextView txt = new TextView(this);
+				TextView txtDesc = new TextView(this);
 				//txt.setText(msg);
-				txt.setText(p.getDescricao());
-				txt.setPadding(0, 10, 0, 0);
-				txt.setTextSize(30);
+				txtDesc.setText(p.getDescricao());
+				txtDesc.setPadding(0, 10, 0, 0);
+				txtDesc.setTextSize(30);
 				//txt.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
 				
-				LinearLayout linearDados = (LinearLayout) findViewById(R.id.pedido_dados);
+				TextView txtValor = new TextView(this);
+				//txt.setText(msg);
+				txtValor.setText("R$ " + Double.toString(p.getValor()));
+				txtValor.setPadding(50, 10, 0, 0);
+				txtValor.setTextSize(30);
+
 				
-				linearDados.addView(txt);
+				LinearLayout linearDados = (LinearLayout) findViewById(R.id.pedido_dados);
+
+	            
+				
+				LinearLayout linear = new LinearLayout(this);
+				LinearLayout linearValor = new LinearLayout(this);
+				
+				linear.setOrientation(LinearLayout.HORIZONTAL);
+				linearValor.setOrientation(LinearLayout.HORIZONTAL);
+				
+				linear.addView(txtDesc);
+				
+				linearValor.addView(txtValor);
+				
+				linear.addView(linearValor);
+				
+				linearDados.addView(linear);
+				
+				//LinearLayout linearTotal = findViewById(R.id.pedido_total);
+//				linear.addView(child)
 			
 				Log.i(CATEGORIA, " ONCREATE");
 				
@@ -125,23 +159,48 @@ public class PedidoActivity extends CicloVidaActivity {
 		*/
 
 		Produto p = (Produto) data.getParcelableExtra(MENSAGEM);	
-		
+		//listaProduto.add(p);
 		
 		if (p != null){
 			
 			
 			Log.i(CATEGORIA, "Mensagem recebida onResult: " + p.getDescricao());
 			
-			TextView txt = new TextView(this);
+			TextView txtDesc = new TextView(this);
 			//txt.setText(msg);
-			txt.setText(p.getDescricao());
-			txt.setPadding(0, 10, 0, 0);
-			txt.setTextSize(30);
+			txtDesc.setText(p.getDescricao());
+			txtDesc.setPadding(0, 10, 0, 0);
+			txtDesc.setTextSize(30);
 			//txt.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
 			
-			LinearLayout linear = (LinearLayout) findViewById(R.id.pedido_dados);
+			TextView txtValor = new TextView(this);
+			//txt.setText(msg);
+			txtValor.setText("R$ " + Double.toString(p.getValor()));
+			txtValor.setPadding(50, 10, 0, 0);
+			txtValor.setTextSize(30);
+
 			
-			linear.addView(txt);
+			LinearLayout linearDados = (LinearLayout) findViewById(R.id.pedido_dados);
+			
+			
+            
+			
+			LinearLayout linear = new LinearLayout(this);
+			LinearLayout linearValor = new LinearLayout(this);
+
+			
+			linear.setOrientation(LinearLayout.HORIZONTAL);
+			linearValor.setOrientation(LinearLayout.HORIZONTAL);
+			
+			
+			linear.addView(txtDesc);
+		
+			linearValor.addView(txtValor);
+		
+			linear.addView(linearValor);
+			
+			linearDados.addView(linear);
+
 			
 			Log.i(CATEGORIA, " ONRESULT");
 		}
@@ -156,6 +215,17 @@ public class PedidoActivity extends CicloVidaActivity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.venda, menu);
 		return true;
+	}
+	
+	public double somaTotal(List<Produto> lista){
+		
+		double soma = 0;
+		for ( Produto p : lista ){
+			
+			soma += p.getValor();
+		}
+		
+		return soma;
 	}
 
 }

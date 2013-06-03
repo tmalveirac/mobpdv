@@ -24,18 +24,18 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_forgot_password=0x7f080017;
-        public static final int action_settings=0x7f080016;
+        public static final int action_forgot_password=0x7f080019;
+        public static final int action_settings=0x7f080018;
         public static final int btnAbrCxa=0x7f080009;
         public static final int btnBpdt=0x7f080010;
-        public static final int btnCancelarPedido=0x7f080013;
+        public static final int btnCancelarPedido=0x7f080015;
         public static final int btnFecCxa=0x7f08000b;
-        public static final int btnRealizarPedido=0x7f080014;
+        public static final int btnRealizarPedido=0x7f080016;
         public static final int btnVerCdp=0x7f08000a;
         public static final int button1=0x7f08000d;
         public static final int button2=0x7f08000e;
         public static final int email=0x7f080004;
-        public static final int listView1=0x7f080015;
+        public static final int listView1=0x7f080017;
         public static final int login=0x7f080006;
         public static final int login_form=0x7f080003;
         public static final int login_status=0x7f080001;
@@ -43,11 +43,13 @@ public final class R {
         public static final int lxpCardapio=0x7f080000;
         public static final int password=0x7f080005;
         public static final int pedido_dados=0x7f080011;
-        public static final int pedido_foot=0x7f080012;
+        public static final int pedido_foot=0x7f080014;
         public static final int pedido_form=0x7f08000f;
+        public static final int pedido_total=0x7f080012;
         public static final int sign_in_button=0x7f080007;
         public static final int spinner1=0x7f08000c;
         public static final int textView1=0x7f080008;
+        public static final int txtTotal=0x7f080013;
     }
     public static final class layout {
         public static final int activity_cardapio=0x7f030000;
@@ -69,10 +71,10 @@ public final class R {
         public static final int venda_final=0x7f070006;
     }
     public static final class string {
-        public static final int action_forgot_password=0x7f05001d;
+        public static final int action_forgot_password=0x7f05001e;
         public static final int action_settings=0x7f050001;
-        public static final int action_sign_in_register=0x7f05001b;
-        public static final int action_sign_in_short=0x7f05001c;
+        public static final int action_sign_in_register=0x7f05001c;
+        public static final int action_sign_in_short=0x7f05001d;
         public static final int app_name=0x7f050000;
         public static final int btnAbrCxa=0x7f050003;
         public static final int btnBpdt=0x7f050007;
@@ -86,24 +88,25 @@ public final class R {
         public static final int btnIniVda=0x7f050004;
         public static final int btnRealizarPedido=0x7f05000d;
         public static final int btnVerCdp=0x7f050006;
-        public static final int error_field_required=0x7f050022;
-        public static final int error_incorrect_password=0x7f050021;
-        public static final int error_invalid_email=0x7f05001f;
-        public static final int error_invalid_password=0x7f050020;
+        public static final int error_field_required=0x7f050023;
+        public static final int error_incorrect_password=0x7f050022;
+        public static final int error_invalid_email=0x7f050020;
+        public static final int error_invalid_password=0x7f050021;
         public static final int hello_world=0x7f050002;
-        public static final int login_progress_signing_in=0x7f05001e;
+        public static final int login_progress_signing_in=0x7f05001f;
         /**  Strings related to login 
          */
-        public static final int prompt_email=0x7f050019;
-        public static final int prompt_password=0x7f05001a;
+        public static final int prompt_email=0x7f05001a;
+        public static final int prompt_password=0x7f05001b;
         public static final int title_activity_cardapio=0x7f05000a;
         public static final int title_activity_ciclo_vida=0x7f050008;
-        public static final int title_activity_login=0x7f050018;
+        public static final int title_activity_login=0x7f050019;
         public static final int title_activity_pagamento=0x7f050012;
         public static final int title_activity_pedido=0x7f050009;
         public static final int title_activity_venda=0x7f05000e;
         public static final int title_activity_venda_final=0x7f050015;
         public static final int txtMain=0x7f05000b;
+        public static final int txtTotal=0x7f050018;
         public static final int txtTotalPago=0x7f050016;
         public static final int txtTotalPedido=0x7f05000f;
     }

@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+      android:id="@+id/pedido_form"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    
+    tools:context=".PedidoActivity" >
+
+    <Button
+        android:id="@+id/btnBpdt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btnBpdt" />
+    
+    <LinearLayout
+        android:id="@+id/pedido_dados"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+    
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/pedido_total"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+    
+        <TextView
+            android:id="@+id/btnCancelarPedido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btnCancelarPedido" />
+        
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/pedido_foot"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btnCancelarPedido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btnCancelarPedido" />
+
+        <Button
+            android:id="@+id/btnRealizarPedido"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btnRealizarPedido" />
+    </LinearLayout>
+
+</LinearLayout>

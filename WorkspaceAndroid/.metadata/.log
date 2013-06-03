@@ -2923,3 +2923,21 @@ java.lang.NullPointerException: returnTypeReference is mandatory
 	at com.android.tools.lint.client.api.LintDriver.analyze(LintDriver.java:361)
 	at com.android.ide.eclipse.adt.internal.lint.LintJob.run(LintJob.java:163)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.android.ide.eclipse.adt 4 4 2013-06-03 19:12:27.012
+!MESSAGE Failed
+!STACK 0
+java.lang.StringIndexOutOfBoundsException: String index out of range: 0
+	at java.lang.String.charAt(String.java:694)
+	at com.android.tools.lint.checks.TextViewDetector.visitElement(TextViewDetector.java:170)
+	at com.android.tools.lint.client.api.XmlVisitor.visitElement(XmlVisitor.java:169)
+	at com.android.tools.lint.client.api.XmlVisitor.visitElement(XmlVisitor.java:205)
+	at com.android.tools.lint.client.api.XmlVisitor.visitElement(XmlVisitor.java:205)
+	at com.android.tools.lint.client.api.XmlVisitor.visitFile(XmlVisitor.java:150)
+	at com.android.tools.lint.client.api.LintDriver.checkIndividualResources(LintDriver.java:1737)
+	at com.android.tools.lint.client.api.LintDriver.runFileDetectors(LintDriver.java:938)
+	at com.android.tools.lint.client.api.LintDriver.checkProject(LintDriver.java:837)
+	at com.android.tools.lint.client.api.LintDriver.analyze(LintDriver.java:438)
+	at com.android.tools.lint.client.api.LintDriver.analyze(LintDriver.java:361)
+	at com.android.ide.eclipse.adt.internal.lint.LintJob.run(LintJob.java:163)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)

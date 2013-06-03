@@ -25,5 +25,6 @@
     <string name="title_activity_venda_final">VendaFinalActivity</string>
     <string name="txtTotalPago">Total Pago: R$ XX</string>
     <string name="btnGerarComp">Gerar Comprovante</string>
+    <string name="txtTotal">TOTAL R$ 0.00</string>
 
 </resources>

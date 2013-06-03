@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MobPDV</string>
+    <string name="action_settings">Configurações</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="btnAbrCxa">Abrir Caixa</string>
+    <string name="btnIniVda">Iniciar Venda</string>
+    <string name="btnFecCxa">Fechar Caixa</string>
+    <string name="btnVerCdp">Ver Cardápio</string>
+    <string name="btnBpdt">Buscar Produto</string>
+    <string name="title_activity_ciclo_vida">CicloVida</string>
+    <string name="title_activity_pedido">Pedido</string>
+    <string name="title_activity_cardapio">Cardapio</string>
+    <string name="txtMain">MobPDV</string>
+    <string name="btnCancelarPedido">Cancelar</string>
+    <string name="btnRealizarPedido">Realizar Pedido</string>
+    <string name="title_activity_venda">VendaActivity</string>
+    <string name="txtTotalPedido">Total a pagar: R$ XX</string>
+    <string name="btnCancelarVenda">Cancelar</string>
+    <string name="btnFinalizarVenda">Finalizar Venda</string>
+    <string name="title_activity_pagamento">PagamentoActivity</string>
+    <string name="btnConfirmarPg">Confirmar</string>
+    <string name="btnCancelarPg">Cancelar</string>
+    <string name="title_activity_venda_final">VendaFinalActivity</string>
+    <string name="txtTotalPago">Total Pago: R$ XX</string>
+    <string name="btnGerarComp">Gerar Comprovante</string>
+
+</resources>
