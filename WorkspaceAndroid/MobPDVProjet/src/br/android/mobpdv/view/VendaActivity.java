@@ -9,15 +9,22 @@ import br.android.mobpdv.R.menu;
 import br.android.mobpdv.model.Produto;
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.util.Log;
 import android.view.Menu;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class VendaActivity extends CicloVidaActivity {
 
+	private AlertDialog alerta;
 	private List<Produto> listaProduto = new ArrayList<Produto>();
 	
 	@Override
@@ -65,10 +72,73 @@ public class VendaActivity extends CicloVidaActivity {
 		
 		
 		
+		
+		Button btnCancelarVenda = (Button) findViewById(R.id.btnCancelarVenda);
+		
+		btnCancelarVenda.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Log.d(CATEGORIA, "Finalizar Venda!");
+				cancelarVenda();
+			}
+		});
+		
+		
+		
+		Button btnFinalizarVenda = (Button) findViewById(R.id.btnFinalizarVenda);
+		
+		btnFinalizarVenda.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Log.d(CATEGORIA, "Cancelar Venda!");
+				
+				Intent it = new Intent(VendaActivity.this, VendaFinalActivity.class);
+				
+				for (int i = 0; i < listaProduto.size(); i++) {
+					it.putExtra(""+i, listaProduto.get(i));
+					Log.d(CATEGORIA, "inserido! " + i);
+				}
+				
+				Log.d(CATEGORIA, "Inseriu");
+				
+				startActivity(it);
+			}
+		});
 	
 
 		
 	}
+	
+	
+	public void cancelarVenda(){
+		
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+	    builder.setTitle("Cancelar Venda");
+	    builder.setMessage("Deseja realmente cancelar a venda?");
+	    
+	    builder.setPositiveButton("Cancelar", new DialogInterface.OnClickListener() {
+	        public void onClick(DialogInterface arg0, int arg1) {
+	        	Log.d(CATEGORIA, "Clicou em Cancelar!");
+	        }
+	    });
+
+	    builder.setNegativeButton("Confirmar", new DialogInterface.OnClickListener() {
+	        public void onClick(DialogInterface arg0, int arg1) {
+	        	Intent it = new Intent(VendaActivity.this, MainActivity.class);
+	            Toast.makeText(VendaActivity.this, VENDA_CANCELADA, Toast.LENGTH_SHORT).show();
+	         
+	        	startActivity(it);
+	            finish();
+	        }
+	    });
+
+	    alerta = builder.create();
+	    alerta.show();
+	    
+	}
+	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

@@ -1,0 +1,53 @@
+package br.android.mobpdv.view;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import br.android.mobpdv.R;
+import br.android.mobpdv.R.layout;
+import br.android.mobpdv.R.menu;
+import br.android.mobpdv.model.Produto;
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+
+public class VendaFinalActivity extends Activity {
+	
+	private List<Produto> listaProduto = new ArrayList<Produto>();
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_venda_final);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.venda_final, menu);
+		return true;
+	}
+	
+	
+	
+	public double somaTotal(List<Produto> lista){
+		
+		double soma = 0;
+		for ( Produto p : lista ){
+			
+			soma += p.getValor();
+		}
+		
+		return soma;
+	}
+
+}

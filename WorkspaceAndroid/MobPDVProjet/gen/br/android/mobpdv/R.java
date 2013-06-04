@@ -24,12 +24,15 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_forgot_password=0x7f08001b;
-        public static final int action_settings=0x7f08001a;
+        public static final int action_forgot_password=0x7f080020;
+        public static final int action_settings=0x7f08001f;
         public static final int btnAbrCxa=0x7f080009;
         public static final int btnBpdt=0x7f080010;
         public static final int btnCancelarPedido=0x7f080015;
+        public static final int btnCancelarVenda=0x7f08001a;
         public static final int btnFecCxa=0x7f08000b;
+        public static final int btnFinalizarVenda=0x7f08001b;
+        public static final int btnGerarComprovante=0x7f08001e;
         public static final int btnRealizarPedido=0x7f080016;
         public static final int btnVerCdp=0x7f08000a;
         public static final int button1=0x7f08000d;
@@ -52,6 +55,8 @@ public final class R {
         public static final int textView1=0x7f080008;
         public static final int txtPedidoTotal=0x7f080017;
         public static final int txtTotal=0x7f080013;
+        public static final int txtValorVendaFinal=0x7f08001c;
+        public static final int venda_final=0x7f08001d;
     }
     public static final class layout {
         public static final int activity_cardapio=0x7f030000;
