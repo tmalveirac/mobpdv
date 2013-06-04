@@ -1,0 +1,78 @@
+package br.android.mobpdv.view;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import br.android.mobpdv.R;
+import br.android.mobpdv.R.layout;
+import br.android.mobpdv.R.menu;
+import br.android.mobpdv.model.Produto;
+import android.os.Bundle;
+import android.app.Activity;
+import android.util.Log;
+import android.view.Menu;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+
+public class VendaActivity extends CicloVidaActivity {
+
+	private List<Produto> listaProduto = new ArrayList<Produto>();
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		
+		
+		Produto p;
+		
+		int i = 0;
+		
+		while (getIntent().hasExtra(""+i)){
+			p = (Produto) getIntent().getParcelableExtra(""+i);
+			listaProduto.add(p);
+				
+			Log.i(CATEGORIA, i + " - " + p.getDescricao());
+			i++;
+		}
+		
+		ListView listaView = (ListView) findViewById(R.id.listView1);
+		
+		ArrayAdapter<String> myarrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, itens);
+		listaView.setAdapter(myarrayAdapter);
+		
+		
+		
+		/*
+		for (int j = 0; j < listaProduto.size() ; j++) {
+			TextView t = new TextView (this);
+			
+			t.setText(listaProduto.get(j).getDescricao() + " -- R$ " + listaProduto.get(j).getValor());
+			
+		
+		}
+		*/
+		
+		
+		setContentView(R.layout.activity_venda);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.venda, menu);
+		return true;
+	}
+
+	
+	public double somaTotal(List<Produto> lista){
+		
+		double soma = 0;
+		for ( Produto p : lista ){
+			
+			soma += p.getValor();
+		}
+		
+		return soma;
+	}
+}

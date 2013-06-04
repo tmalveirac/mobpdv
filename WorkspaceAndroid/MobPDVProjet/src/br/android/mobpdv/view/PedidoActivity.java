@@ -126,6 +126,28 @@ public class PedidoActivity extends CicloVidaActivity {
 		});
 		
 		
+		Button btnRealizarPedido = (Button) findViewById(R.id.btnRealizarPedido);
+		
+		btnRealizarPedido.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Log.d(CATEGORIA, "Realizar Venda!");
+				
+				Intent it = new Intent(PedidoActivity.this, VendaActivity.class);
+				//it.putExtra(MENSAGEM, REALIZAR_VENDA);				
+				
+				for (int i = 0; i < listaProduto.size(); i++) {
+					it.putExtra(""+i, listaProduto.get(i));
+					Log.d(CATEGORIA, "inserido! " + i);
+				}
+				
+				Log.d(CATEGORIA, "Inseriu");
+				
+				startActivity(it);
+			}
+		});
+		
 	}
 	
 	
@@ -186,9 +208,6 @@ public class PedidoActivity extends CicloVidaActivity {
 
 			
 			LinearLayout linearDados = (LinearLayout) findViewById(R.id.pedido_dados);
-			
-			
-            
 			
 			LinearLayout linear = new LinearLayout(this);
 			LinearLayout linearValor = new LinearLayout(this);
